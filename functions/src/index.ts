@@ -13,7 +13,7 @@ admin.initializeApp({
 
 exports.delete = functions.firestore
   .document('Users/{uId}').onDelete((snap) =>{
-return factory.getUserController().delete(snap.data())
+return factory.getUserController().delete(snap.id)
 
 });
 

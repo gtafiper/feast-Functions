@@ -5,7 +5,8 @@ export class UserRepositoryFirebase implements UserRepository{
   userPath = 'Users';
 
   deleteUser(uid: string): Promise<any> {
-    return this.db().doc(`${this.userPath}/${uid}`).delete()
+    return admin.auth().deleteUser(uid)
+    //return this.db().doc(`${this.userPath}/${uid}`).delete()
   }
 
   db(): FirebaseFirestore.Firestore {
