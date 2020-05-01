@@ -2,7 +2,7 @@ import * as functions from 'firebase-functions';
 import * as admin from "firebase-admin";
 import {DependencyFactory} from './dependencyFactory';
 
-const serviceAccount = require("../loginapp.json")
+const serviceAccount = require("../secret.json")
 
 const factory = new DependencyFactory();
 
@@ -14,7 +14,6 @@ admin.initializeApp({
 exports.delete = functions.firestore
   .document('Users/{uId}').onDelete((snap) =>{
 return factory.getUserController().delete(snap.id)
-
 });
 
 
