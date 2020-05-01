@@ -18,6 +18,11 @@ describe('UserService', () => {
     userService = new UserService(userRepository.object());
   });
 
+  it('UserService needs a UserRepository', () => {
+    const userServiceDefined = new UserService(userRepository.object());
+    expect(userServiceDefined).toStrictEqual(userServiceDefined);
+  });
+
   it('should check if user repo has a delete function', async () => {
     await userService.deleteUser(user.uid);
     userRepository.verify(userRepo => userRepo.deleteUser(user.uid), Times.Exactly(1))
