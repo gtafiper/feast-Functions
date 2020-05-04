@@ -20,7 +20,7 @@ describe('UserService', () => {
 
   it('UserService needs a UserRepository', () => {
     const userServiceDefined = new UserService(userRepository.object());
-    expect(userServiceDefined).toStrictEqual(userServiceDefined);
+    expect(userServiceDefined).toStrictEqual(userService);
   });
 
   it('should check if user repo has a delete function', async () => {
