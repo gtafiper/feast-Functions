@@ -1,10 +1,9 @@
 import {Ingredient} from './ingredient';
-import {User} from './user';
 
-export interface userRecipe {
+export interface UserRecipe {
   id?: string;
   name: string;
-  ingredients: Array<Ingredient>;
-  estimatedTime: number;
-  user: User;
+  ingredients?: Array<Ingredient>;
+  estimatedTime?: number;
+  userId?: string;
 }
