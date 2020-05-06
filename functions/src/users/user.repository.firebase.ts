@@ -3,13 +3,13 @@ import * as admin from 'firebase-admin';
 import {UserRecipe} from "../models/userRecipe";
 import {User} from "../models/user";
 
-export class UserRepositoryFirebase implements UserRepository{
+export class UserRepositoryFirebase implements UserRepository {
   userPath = 'Users';
   userRecipes = 'UserRecipe'
 
   deleteUser(uid: string): Promise<any> {
-    return admin.auth().deleteUser(uid)
-
+    return admin.auth().deleteUser(uid);
+    //return this.db().doc(`${this.userPath}/${uid}`).delete()
   }
 
   async deleteAllUserRecipes(user: User): Promise<any>{

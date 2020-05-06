@@ -4,12 +4,13 @@ import {User} from "../models/user";
 
 export class UserController {
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+  }
 
 
-  delete(snap: string){
+  delete(snap: string) {
 
-     return this.userService.deleteUser(snap);
+    return this.userService.deleteUser(snap);
   }
 
   deleteUserRecipes(snap: DocumentSnapshot): Promise<void> {

@@ -1,4 +1,4 @@
-import {UserRecipe} from "./userRecipe";
+import {UserRecipe} from './userRecipe';
 
 export interface User {
   uid: string;
