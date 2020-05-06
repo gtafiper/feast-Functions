@@ -16,9 +16,18 @@ exports.delete = functions.firestore
 return factory.getUserController().delete(snap.id)
 });
 
+/*
 exports.addUserRecipe = functions.firestore
   .document('UserRecipe/{uId}').onCreate((snapshot, context) => {
 
-  })
+  });
+
+
+ */
+
+exports.deleteUserRcipes = functions.firestore.
+document('Users/{uId}').onDelete((snapshot) => {
+  return factory.getUserController().deleteUserRecipes(snapshot)
+});
 
 
