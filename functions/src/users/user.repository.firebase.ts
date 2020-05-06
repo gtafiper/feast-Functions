@@ -8,27 +8,21 @@ export class UserRepositoryFirebase implements UserRepository {
   userRecipes = 'UserRecipe'
 
   deleteUser(uid: string): Promise<any> {
-    return admin.auth().deleteUser(uid);
-    //return this.db().doc(`${this.userPath}/${uid}`).delete()
+    return admin.auth().deleteUser(uid).then(Promise.resolve)
   }
 
-  async deleteAllUserRecipes(user: User): Promise<any>{
-
-    const listOfUserRecipes = this.db().collection(this.userRecipes).where('userId', '==', user.uid).get().then( value => {
-
-      for(const i in listOfUserRecipes) {
-
-       const userRecipe = value.docs[Number(i)].data() as UserRecipe;
-
-       this.deleteUserRecipes(userRecipe)
-     }
-   })
-
-
+  deleteAllUserRecipes(user: User): any {
+    return this.db().collection(this.userRecipes).
+    where('userId', '==', user.uid).get().then(value => {
+      value.docs.forEach(value1 => {
+        this.deleteUserRecipes(value1.data() as UserRecipe)
+      });
+    })
   }
-async deleteUserRecipes(userRecipe: UserRecipe): Promise<any>{
-    await this.db().doc(`${this.userRecipes}/${userRecipe}`).delete()
-}
+
+    deleteUserRecipes(userRecipe: UserRecipe): any{
+     return this.db().doc(`${this.userRecipes}/${userRecipe.id}`).delete()
+  }
 
 
   db(): FirebaseFirestore.Firestore {

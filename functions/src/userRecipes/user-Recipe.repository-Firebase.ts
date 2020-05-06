@@ -6,7 +6,7 @@ export class UserRecipeRepositoryFirebase implements UserRecipeRepository {
 
   userPath: string = 'Users';
 
-  addUserRecipe(userId: string, recipeName: string, id: string): Promise<any> {
+  public addUserRecipe(userId: string, recipeName: string, id: string): Promise<any> {
     const userRecipe = {name: recipeName, id: id};
     return this.db().doc(`${this.userPath}/${userId}`).set(userRecipe);
   }
