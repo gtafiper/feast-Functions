@@ -5,5 +5,5 @@ export interface UserRecipe {
   name: string;
   ingredients?: Array<Ingredient>;
   estimatedTime?: number;
-  userId?: string;
+  userId: string;
 }
