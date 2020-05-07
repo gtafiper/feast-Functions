@@ -1,0 +1,30 @@
+[debug] [2020-05-07T09:39:01.578Z] ----------------------------------------------------------------------
+[debug] [2020-05-07T09:39:01.580Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nijas Hansen\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only firestore
+[debug] [2020-05-07T09:39:01.581Z] CLI Version:   8.2.0
+[debug] [2020-05-07T09:39:01.581Z] Platform:      win32
+[debug] [2020-05-07T09:39:01.581Z] Node Version:  v12.16.3
+[debug] [2020-05-07T09:39:01.582Z] Time:          Thu May 07 2020 11:39:01 GMT+0200 (GMT+02:00)
+[debug] [2020-05-07T09:39:01.582Z] ----------------------------------------------------------------------
+[debug] [2020-05-07T09:39:01.582Z] 
+[debug] [2020-05-07T09:39:01.590Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-07T09:39:01.590Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: firestore
+[debug] [2020-05-07T09:39:03.650Z] [hub] writing locator at C:\Users\NIJASH~1\AppData\Local\Temp\hub-feast-782f3.json
+[info] +  hub: emulator hub started at http://localhost:4400
+[warn] !  firestore: The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration.
+[debug] [2020-05-07T09:39:05.666Z] Ignoring unsupported arg: projectId
+[debug] [2020-05-07T09:39:05.666Z] Ignoring unsupported arg: auto_download
+[debug] [2020-05-07T09:39:05.666Z] Starting firestore emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\Nijas Hansen\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.11.3.jar","--host","localhost","--port",8080,"--rules","D:\\GitHub Projecs\\feast-Functions\\firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false}
+[info] i  firestore: firestore emulator logging to firestore-debug.log
+[debug] [2020-05-07T09:39:07.302Z] API endpoint: http://localhost
+[debug] [2020-05-07T09:39:07.302Z] :8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] +  firestore: firestore emulator started at http://localhost:8080
+[info] i  firestore: For testing set FIRESTORE_EMULATOR_HOST=localhost:8080
+[info] +  emulators: All emulators started, it is now safe to connect.
