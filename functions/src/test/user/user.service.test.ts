@@ -29,7 +29,6 @@ describe('UserService', () => {
   });
 
   it('should delete the user and check if the user is undefined', async () => {
-    // @ts-ignore
     const userAfter: User = await userService.deleteUser(user);
     expect(userAfter).toBeUndefined();
   });
