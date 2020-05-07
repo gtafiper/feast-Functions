@@ -11,7 +11,10 @@ export class UserService {
   }
 
   deleteUserRecipes(user: User) {
-    return this.userRepo.deleteAllUserRecipes(user);
+    if (user.userRecipes) {
+      return this.userRepo.deleteAllUserRecipes(user);
+    }
+    return Promise.resolve();
   }
 
 }

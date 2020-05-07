@@ -33,13 +33,31 @@ export class UserRecipeRepositoryFirebase implements UserRecipeRepository {
   }
 
   public deleteUserRecipePreview(urId: string, recipeName: string, userId: string): any {
-    return this.db().doc(`${this.userPath}/${userId}`)
-      .update(
-        {
-          userRecipes: FieldValue.arrayRemove({
-            name: recipeName, id: urId
-          })
-        });
+
+    return this.db().doc(`${this.userPath}/${userId}`).get().then(data => {
+      const promise = new Promise(((resolve, reject) => {
+        if (data.exists) {
+
+          this.db().doc(`${this.userPath}/${userId}`).update(
+            {
+              userRecipes: FieldValue.arrayRemove({
+                name: recipeName, id: urId
+              })
+            })
+            .then(() => {
+              resolve();
+            })
+            .catch(reason => {
+              reject(reason);
+            })
+
+        }
+        resolve();
+      }));
+
+      return promise;
+    })
+
   }
 
   public updateUserRecipePreview(userId: string, recipeName: string, id: string): any {

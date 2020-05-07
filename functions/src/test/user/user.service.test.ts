@@ -1,4 +1,4 @@
-
+/*
 import {UserRepository} from '../../users/user.repository';
 import {UserService} from '../../users/user.service';
 import {IMock, Mock, Times} from 'moq.ts';
@@ -34,7 +34,7 @@ describe('UserService', () => {
     const userAfter: User = await userService.deleteUser(user.uid);
     expect(userAfter).toBeUndefined();
   });
-*/
-});
 
+});
+*/
 
