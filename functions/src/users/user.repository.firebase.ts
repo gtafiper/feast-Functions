@@ -1,6 +1,6 @@
 import {UserRepository} from './user.repository';
 import * as admin from 'firebase-admin';
-import {User} from "../models/user";
+import {User} from '../models/user';
 
 export class UserRepositoryFirebase implements UserRepository {
   userPath = 'Users';
@@ -19,14 +19,14 @@ export class UserRepositoryFirebase implements UserRepository {
         this.db().doc(`${this.userRecipes}/${value.id}`).delete().then(() => {
           requestSuccess++;
           if (requestSuccess === requestToBeSend) {
-            resolve(1)
+            resolve(1);
           }
         }).catch(err => {
-          reject(err)
-        })
+          reject(err);
+        });
       });
     }));
-    return promise
+    return promise;
 
   }
 

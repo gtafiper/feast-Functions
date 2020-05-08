@@ -49,14 +49,14 @@ export class UserRecipeRepositoryFirebase implements UserRecipeRepository {
             })
             .catch(reason => {
               reject(reason);
-            })
+            });
 
         }
         resolve();
       }));
 
       return promise;
-    })
+    });
 
   }
 

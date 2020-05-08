@@ -5,8 +5,8 @@ module.exports.setup = async (auth, data) => {
   const projectId = `rules-test-${Date.now()}`;
 
   const app = firebase.initializeTestApp({
-      projectId,
-      auth
+    projectId,
+    auth
   });
 
   const db = app.firestore();
@@ -14,9 +14,9 @@ module.exports.setup = async (auth, data) => {
   await firebase.loadFirestoreRules({
     projectId,
     rules: fs.readFileSync('firestore-test.rules', 'utf8')
-  })
+  });
 
-  if(data) {
+  if (data) {
     for (const key in data) {
       const ref = db.doc(key);
       await ref.set(data[key])
@@ -26,14 +26,14 @@ module.exports.setup = async (auth, data) => {
   await firebase.loadFirestoreRules({
     projectId,
     rules: fs.readFileSync('firestore.rules', 'utf8')
-  })
+  });
 
   return db;
-}
+};
 
 module.exports.teardown = async () => {
   Promise.all(firebase.apps().map(app => app.delete()))
-}
+};
 
 expect.extend({
   async toAllow(testPromise) {
@@ -50,7 +50,7 @@ expect.extend({
       message: () => 'Expected firebase operation to be allowed, but was denied'
     }
   }
-})
+});
 
 expect.extend({
   async toDeny(testPromise) {
@@ -67,4 +67,4 @@ expect.extend({
       message: () => 'Expected firebase operation to be denied, but was allowed'
     }
   }
-})
+});

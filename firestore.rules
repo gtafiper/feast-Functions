@@ -4,6 +4,7 @@ service cloud.firestore {
 
   function isAdmin() {
   	return get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.role == "Admin";
+
   }
 
   function isUser() {
@@ -15,7 +16,7 @@ service cloud.firestore {
   }
 
   function isRecipeAuthor(requesterID, recipeId) {
-  	return get(/databases/$(database)/documents/UserRecipe/$(recipeId)).data.userId == requesterID;
+  	return request.resource.data.userId == requesterID || get(/databases/$(database)/documents/UserRecipe/$(recipeId)).data.userId == requesterID;
   }
 
 
@@ -34,8 +35,7 @@ service cloud.firestore {
     }
 
     match /UserRecipe/{recipeId} {
-    	allow read: if isRecipeAuthor(request.auth.uid, recipeId) || isAdmin();
-      allow write: if isUser();
+    	allow read, write: if isRecipeAuthor(request.auth.uid, recipeId) || isAdmin();
     }
   }
 }

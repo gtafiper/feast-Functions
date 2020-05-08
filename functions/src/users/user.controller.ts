@@ -1,6 +1,6 @@
 import {UserService} from './user.service';
-import {DocumentSnapshot} from "firebase-functions/lib/providers/firestore";
-import {User} from "../models/user";
+import {DocumentSnapshot} from 'firebase-functions/lib/providers/firestore';
+import {User} from '../models/user';
 
 export class UserController {
 

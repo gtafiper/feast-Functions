@@ -2,40 +2,8 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-  function isAdmin() {
-  	return get(/databases/$(database)/documents/Users/$(request.auth.uid)).data.role == "Admin";
-  }
-
-  function isUser() {
-  	return request.auth.uid != null;
-  }
-
-  function isAuthor(requesterID ,userID) {
-  	return requesterID == userID;
-  }
-
-  function isRecipeAuthor(requesterID, recipeId) {
-  	return get(/databases/$(database)/documents/UserRecipe/$(recipeId)).data.userId == requesterID;
-  }
-
-
-    match /Recipes/{document} {
-      allow read: if true;
-
-      allow write: if isAdmin();
-
-
-    }
-
-    match /Users/{userId} {
-    	allow read, write: if isAdmin() || isAuthor(request.auth.uid, userId);
-
-
-    }
-
-    match /UserRecipe/{recipeId} {
-    	allow read: if isRecipeAuthor(request.auth.uid, recipeId) || isAdmin();
-      allow write: if isUser();
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }

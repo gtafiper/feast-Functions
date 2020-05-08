@@ -43,8 +43,7 @@ exports.updateUserRecipePreview = functions.firestore
     return factory.getUserRecipeController().update(temp.userId, temp.name, snapshot.before.id);
   });
 
-  exports.deleteUserRcipes = functions.firestore.
-  document(Users +'/{uId}').onDelete((snapshot) => {
-    return factory.getUserController().deleteUserRecipes(snapshot);
-  });
+exports.deleteUserRcipes = functions.firestore.document(Users + '/{uId}').onDelete((snapshot) => {
+  return factory.getUserController().deleteUserRecipes(snapshot);
+});
 
