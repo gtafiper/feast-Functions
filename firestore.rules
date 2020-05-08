@@ -20,7 +20,7 @@ service cloud.firestore {
 
 
     match /Recipes/{document} {
-      allow read: if true;
+      allow read: if isUser();
 
       allow write: if isAdmin();
 
