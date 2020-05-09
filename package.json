@@ -8,7 +8,16 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deployf": "firebase deploy --only functions"
+    "test:rules": "jest ./rules",
+    "test:all": "jest --coverage",
+    "setup:emulator": "firebase setup:emulators:firestore",
+    "serve:functions": "npm run build && firebase emulators:start --only functions",
+    "serve:rules": "firebase emulators:start --only firestore",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy:func": "firebase deploy --only functions",
+    "deploy:rules": "firebase deploy --only firestore:rules",
+    "logs": "firebase functions:log"
   },
   "private": true,
   "dependencies": {

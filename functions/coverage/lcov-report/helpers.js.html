@@ -1,62 +1,62 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
-  <title>Code coverage report for helpers.js</title>
-  <meta charset="utf-8"/>
-  <link rel="stylesheet" href="prettify.css"/>
-  <link rel="stylesheet" href="base.css"/>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <style type='text/css'>
-    .coverage-summary .sorter {
-      background-image: url(sort-arrow-sprite.png);
-    }
-  </style>
+    <title>Code coverage report for helpers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
 </head>
-
+    
 <body>
 <div class='wrapper'>
-  <div class='pad1'>
-    <h1><a href="index.html">All files</a> helpers.js</h1>
-    <div class='clearfix'>
-
-      <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
-        <span class="quiet">Statements</span>
-        <span class='fraction'>12/32</span>
-      </div>
-
-
-      <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
-      </div>
-
-
-      <div class='fl pad1y space-right2'>
-        <span class="strong">42.86% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>3/7</span>
-      </div>
-
-
-      <div class='fl pad1y space-right2'>
-        <span class="strong">35.48% </span>
-        <span class="quiet">Lines</span>
-        <span class='fraction'>11/31</span>
-      </div>
-
-
+    <div class='pad1'>
+        <h1><a href="index.html">All files</a> helpers.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">37.5% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>12/32</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">42.86% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">35.48% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>11/31</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
     </div>
-    <p class="quiet">
-      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the
-      previous block.
-    </p>
-  </div>
-  <div class='status-line low'></div>
-  <pre><table class="coverage">
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
 <a name='L3'></a><a href='#L3'>3</a>
@@ -131,16 +131,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,7 +161,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -204,8 +204,8 @@ module.exports.setup = async (auth, data) =&gt; {
   const projectId = `rules-test-${Date.now()}`;
 &nbsp;
   const app = firebase.initializeTestApp({
-      projectId,
-      auth
+    projectId,
+    auth
   });
 &nbsp;
   const db = app.firestore();
@@ -213,10 +213,10 @@ module.exports.setup = async (auth, data) =&gt; {
   await firebase.loadFirestoreRules({
     projectId,
     rules: fs.readFileSync('firestore-test.rules', 'utf8')
-  })
+  });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if(data) {</span>
-  <span class="cstat-no" title="statement not covered">    for (const key in data) {</span>
+<span class="cstat-no" title="statement not covered" >  if (data) {</span>
+<span class="cstat-no" title="statement not covered" >    for (const key in data) {</span>
       const ref = <span class="cstat-no" title="statement not covered" >db.doc(key);</span>
 <span class="cstat-no" title="statement not covered" >      await ref.set(data[key])</span>
     }
@@ -225,65 +225,66 @@ module.exports.setup = async (auth, data) =&gt; {
 <span class="cstat-no" title="statement not covered" >  await firebase.loadFirestoreRules({</span>
     projectId,
     rules: fs.readFileSync('firestore.rules', 'utf8')
-  })
+  });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return db;</span>
-}
+};
 &nbsp;
 module.exports.teardown = async () =&gt; {
   Promise.all(firebase.apps().map(app =&gt; app.delete()))
-}
+};
 &nbsp;
 expect.extend({
-  <span class="fstat-no" title="function not covered" >  as</span>ync toAllow(testPromise) {
-    let pass = <span class="cstat-no" title="statement not covered">false;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="fstat-no" title="function not covered" >  as</span>ync toAllow(testPromise) {
+    let pass = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      await firebase.assertSucceeds(testPromise);</span>
 <span class="cstat-no" title="statement not covered" >      pass = true;</span>
     } catch (e) {
-  <span class="cstat-no" title="statement not covered" >      console.log(e);</span>
+<span class="cstat-no" title="statement not covered" >      console.log(e);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       pass,
       message: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >'Expected firebase operation to be allowed, but was denied'</span>
     }
   }
-})
+});
 &nbsp;
 expect.extend({
-  <span class="fstat-no" title="function not covered" >  as</span>ync toDeny(testPromise) {
-    let pass = <span class="cstat-no" title="statement not covered">false;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="fstat-no" title="function not covered" >  as</span>ync toDeny(testPromise) {
+    let pass = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      await firebase.assertFails(testPromise);</span>
 <span class="cstat-no" title="statement not covered" >      pass = true;</span>
     } catch (e) {
-  <span class="cstat-no" title="statement not covered" >      console.log(e);</span>
+<span class="cstat-no" title="statement not covered" >      console.log(e);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       pass,
       message: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >'Expected firebase operation to be denied, but was allowed'</span>
     }
   }
-})
+});
 &nbsp;</pre></td></tr></table></pre>
 
-  <div class='push'></div><!-- for sticky footer -->
-</div><!-- /wrapper -->
-<div class='footer quiet pad2 space-top1 center small'>
-  Code coverage generated by
-  <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-  at Fri May 08 2020 11:03:14 GMT+0200 (Central European Summer Time)
-</div>
-</div>
-<script src="prettify.js"></script>
-<script>
-    window.onload = function () {
-        prettyPrint();
-    };
-</script>
-<script src="sorter.js"></script>
-<script src="block-navigation.js"></script>
-</body>
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Fri May 08 2020 19:40:45 GMT+0200 (Central European Summer Time)
+            </div>
+        </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
 </html>
+    
