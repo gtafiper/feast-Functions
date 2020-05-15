@@ -5,4 +5,6 @@ export interface UserRepository {
 
 
   deleteAllUserRecipes(user: User): Promise<any>
+
+  createUserByAuth(user: User): any;
 }

@@ -14,7 +14,7 @@ export class UserRepositoryFirebase implements UserRepository {
 
     const promise = new Promise(((resolve, reject) => {
       let requestSuccess = 0;
-      let requestToBeSend = user.userRecipes.length;
+      const requestToBeSend = user.userRecipes.length;
       user.userRecipes.forEach(value => {
         this.db().doc(`${this.userRecipes}/${value.id}`).delete().then(() => {
           requestSuccess++;
@@ -33,6 +33,13 @@ export class UserRepositoryFirebase implements UserRepository {
 
   db(): FirebaseFirestore.Firestore {
     return admin.firestore();
+  }
+
+  createUserByAuth(user: User): any {
+    if (user !== null) {
+      return this.db().collection(this.userPath).doc(user.uid).set(user);
+    }
+    return Promise.resolve();
   }
 
 }

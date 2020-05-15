@@ -37,6 +37,10 @@ exports.createUserRecipePreview = functions.firestore
     return factory.getUserRecipeController().create(temp.userId, temp.name, snapshot.id);
   });
 
+exports.createUserFromAuthentication = functions.auth.user().onCreate((user) => {
+  return factory.getUserController().createUserByAuth(user);
+});
+
 exports.updateUserRecipePreview = functions.firestore
   .document(UserRecipe + '/{id}').onUpdate(snapshot => {
     const temp = snapshot.after.data() as UserRecipe;
